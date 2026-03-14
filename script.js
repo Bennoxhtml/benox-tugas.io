@@ -1,26 +1,51 @@
-function convert(){
-
-let number=document.getElementById("number").value
-let type=document.getElementById("type").value
-let decimal
+function convertToDecimal(num,type){
 
 if(type=="desimal")
-decimal=parseInt(number)
+return parseInt(num)
 
-else if(type=="biner")
-decimal=parseInt(number,2)
+if(type=="biner")
+return parseInt(num,2)
 
-else if(type=="oktal")
-decimal=parseInt(number,8)
+if(type=="oktal")
+return parseInt(num,8)
 
-else if(type=="heksa")
-decimal=parseInt(number,16)
+if(type=="heksa")
+return parseInt(num,16)
 
-document.getElementById("desimal").innerText=decimal
-document.getElementById("biner").innerText=decimal.toString(2)
-document.getElementById("oktal").innerText=decimal.toString(8)
-document.getElementById("hexa").innerText=decimal.toString(16).toUpperCase()
-document.getElementById("romawi").innerText=toRoman(decimal)
+}
+
+function calculate(){
+
+let num1=document.getElementById("num1").value
+let num2=document.getElementById("num2").value
+
+let type1=document.getElementById("type1").value
+let type2=document.getElementById("type2").value
+
+let operator=document.getElementById("operator").value
+
+let dec1=convertToDecimal(num1,type1)
+let dec2=convertToDecimal(num2,type2)
+
+let result
+
+if(operator=="+")
+result=dec1+dec2
+
+else if(operator=="-")
+result=dec1-dec2
+
+else if(operator=="*")
+result=dec1*dec2
+
+else if(operator=="/")
+result=Math.floor(dec1/dec2)
+
+document.getElementById("desimal").innerText=result
+document.getElementById("biner").innerText=result.toString(2)
+document.getElementById("oktal").innerText=result.toString(8)
+document.getElementById("hexa").innerText=result.toString(16).toUpperCase()
+document.getElementById("romawi").innerText=toRoman(result)
 
 }
 
@@ -41,4 +66,5 @@ num-=val[i]
 }
 
 return roman
+
 }

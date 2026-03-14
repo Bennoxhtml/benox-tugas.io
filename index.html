@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Konversi Bilangan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>KONVERSI BILANGAN</h2>
+
+      <input type="text" id="number" placeholder="Masukkan angka" />
+
+      <select id="type">
+        <option value="desimal">Desimal</option>
+        <option value="biner">Biner</option>
+        <option value="oktal">Oktal</option>
+        <option value="heksa">Heksadesimal</option>
+      </select>
+
+      <button onclick="convert()">Convert</button>
+
+      <div class="result">
+        <p>Desimal : <span id="desimal"></span></p>
+        <p>Biner : <span id="biner"></span></p>
+        <p>Oktal : <span id="oktal"></span></p>
+        <p>Hexa : <span id="hexa"></span></p>
+        <p>Romawi : <span id="romawi"></span></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
